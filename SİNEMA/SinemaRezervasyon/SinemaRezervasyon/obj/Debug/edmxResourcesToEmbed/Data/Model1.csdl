@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SinemaaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SinemaaDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="blgFilms" EntityType="SinemaaDbModel.blgFilm" />
+    <EntitySet Name="blgFilmTabloes" EntityType="SinemaaDbModel.blgFilmTablo" />
+    <EntitySet Name="blgIceceks" EntityType="SinemaaDbModel.blgIcecek" />
+    <EntitySet Name="blgKoltuks" EntityType="SinemaaDbModel.blgKoltuk" />
+    <EntitySet Name="blgPersonels" EntityType="SinemaaDbModel.blgPersonel" />
+    <EntitySet Name="blgSalons" EntityType="SinemaaDbModel.blgSalon" />
+    <EntitySet Name="blgSeans" EntityType="SinemaaDbModel.blgSean" />
+    <EntitySet Name="blgTurs" EntityType="SinemaaDbModel.blgTur" />
+    <EntitySet Name="blgYiyeceks" EntityType="SinemaaDbModel.blgYiyecek" />
+    <EntitySet Name="blgYoneticis" EntityType="SinemaaDbModel.blgYonetici" />
+    <EntitySet Name="tblCiroes" EntityType="SinemaaDbModel.tblCiro" />
+    <EntitySet Name="tblSatis" EntityType="SinemaaDbModel.tblSati" />
+    <AssociationSet Name="FK_blgFilm_blgFilmTablo" Association="SinemaaDbModel.FK_blgFilm_blgFilmTablo">
+      <End Role="blgFilmTablo" EntitySet="blgFilmTabloes" />
+      <End Role="blgFilm" EntitySet="blgFilms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_blgFilm_blgSalon" Association="SinemaaDbModel.FK_blgFilm_blgSalon">
+      <End Role="blgSalon" EntitySet="blgSalons" />
+      <End Role="blgFilm" EntitySet="blgFilms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_blgFilm_blgSeans" Association="SinemaaDbModel.FK_blgFilm_blgSeans">
+      <End Role="blgSean" EntitySet="blgSeans" />
+      <End Role="blgFilm" EntitySet="blgFilms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_blgFilm_blgTur" Association="SinemaaDbModel.FK_blgFilm_blgTur">
+      <End Role="blgTur" EntitySet="blgTurs" />
+      <End Role="blgFilm" EntitySet="blgFilms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgFilmTablo" Association="SinemaaDbModel.FK_tblSatis_blgFilmTablo">
+      <End Role="blgFilmTablo" EntitySet="blgFilmTabloes" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgIcecek" Association="SinemaaDbModel.FK_tblSatis_blgIcecek">
+      <End Role="blgIcecek" EntitySet="blgIceceks" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgKoltuk" Association="SinemaaDbModel.FK_tblSatis_blgKoltuk">
+      <End Role="blgKoltuk" EntitySet="blgKoltuks" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgPersonel" Association="SinemaaDbModel.FK_tblSatis_blgPersonel">
+      <End Role="blgPersonel" EntitySet="blgPersonels" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_blgSeans_blgSalon" Association="SinemaaDbModel.FK_blgSeans_blgSalon">
+      <End Role="blgSalon" EntitySet="blgSalons" />
+      <End Role="blgSean" EntitySet="blgSeans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgSalon" Association="SinemaaDbModel.FK_tblSatis_blgSalon">
+      <End Role="blgSalon" EntitySet="blgSalons" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgSeans" Association="SinemaaDbModel.FK_tblSatis_blgSeans">
+      <End Role="blgSean" EntitySet="blgSeans" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgTur" Association="SinemaaDbModel.FK_tblSatis_blgTur">
+      <End Role="blgTur" EntitySet="blgTurs" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSatis_blgYiyecek" Association="SinemaaDbModel.FK_tblSatis_blgYiyecek">
+      <End Role="blgYiyecek" EntitySet="blgYiyeceks" />
+      <End Role="tblSati" EntitySet="tblSatis" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="blgFilm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilmTabloId" Type="Int32" />
+    <Property Name="SalonId" Type="Int32" />
+    <Property Name="SeansId" Type="Int32" />
+    <Property Name="TurId" Type="Int32" />
+    <Property Name="Fiyat" Type="Double" />
+    <Property Name="ResimUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="blgFilmTablo" Relationship="SinemaaDbModel.FK_blgFilm_blgFilmTablo" FromRole="blgFilm" ToRole="blgFilmTablo" />
+    <NavigationProperty Name="blgSalon" Relationship="SinemaaDbModel.FK_blgFilm_blgSalon" FromRole="blgFilm" ToRole="blgSalon" />
+    <NavigationProperty Name="blgSean" Relationship="SinemaaDbModel.FK_blgFilm_blgSeans" FromRole="blgFilm" ToRole="blgSean" />
+    <NavigationProperty Name="blgTur" Relationship="SinemaaDbModel.FK_blgFilm_blgTur" FromRole="blgFilm" ToRole="blgTur" />
+  </EntityType>
+  <EntityType Name="blgFilmTablo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilmAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="blgFilms" Relationship="SinemaaDbModel.FK_blgFilm_blgFilmTablo" FromRole="blgFilmTablo" ToRole="blgFilm" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgFilmTablo" FromRole="blgFilmTablo" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgIcecek">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IcecekAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="Double" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgIcecek" FromRole="blgIcecek" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgKoltuk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KoltukNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgKoltuk" FromRole="blgKoltuk" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgPersonel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgPersonel" FromRole="blgPersonel" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgSalon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalonNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KoltukSayisi" Type="Int32" />
+    <NavigationProperty Name="blgFilms" Relationship="SinemaaDbModel.FK_blgFilm_blgSalon" FromRole="blgSalon" ToRole="blgFilm" />
+    <NavigationProperty Name="blgSeans" Relationship="SinemaaDbModel.FK_blgSeans_blgSalon" FromRole="blgSalon" ToRole="blgSean" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgSalon" FromRole="blgSalon" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgSean">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Seans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SalonId" Type="Int32" />
+    <NavigationProperty Name="blgFilms" Relationship="SinemaaDbModel.FK_blgFilm_blgSeans" FromRole="blgSean" ToRole="blgFilm" />
+    <NavigationProperty Name="blgSalon" Relationship="SinemaaDbModel.FK_blgSeans_blgSalon" FromRole="blgSean" ToRole="blgSalon" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgSeans" FromRole="blgSean" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgTur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TurAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="blgFilms" Relationship="SinemaaDbModel.FK_blgFilm_blgTur" FromRole="blgTur" ToRole="blgFilm" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgTur" FromRole="blgTur" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgYiyecek">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="YiyecekAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="Double" />
+    <NavigationProperty Name="tblSatis" Relationship="SinemaaDbModel.FK_tblSatis_blgYiyecek" FromRole="blgYiyecek" ToRole="tblSati" />
+  </EntityType>
+  <EntityType Name="blgYonetici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblCiro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToplamBilet" Type="Int32" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <Property Name="Ciro" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblSati">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TurId" Type="Int32" />
+    <Property Name="FilmId" Type="Int32" />
+    <Property Name="SalonId" Type="Int32" />
+    <Property Name="SeansId" Type="Int32" />
+    <Property Name="YiyecekId" Type="Int32" />
+    <Property Name="IcecekId" Type="Int32" />
+    <Property Name="BiletAdet" Type="Int32" />
+    <Property Name="BiletNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelId" Type="Int32" />
+    <Property Name="KoltukId" Type="Int32" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <Property Name="Tutar" Type="Double" />
+    <NavigationProperty Name="blgFilmTablo" Relationship="SinemaaDbModel.FK_tblSatis_blgFilmTablo" FromRole="tblSati" ToRole="blgFilmTablo" />
+    <NavigationProperty Name="blgIcecek" Relationship="SinemaaDbModel.FK_tblSatis_blgIcecek" FromRole="tblSati" ToRole="blgIcecek" />
+    <NavigationProperty Name="blgKoltuk" Relationship="SinemaaDbModel.FK_tblSatis_blgKoltuk" FromRole="tblSati" ToRole="blgKoltuk" />
+    <NavigationProperty Name="blgPersonel" Relationship="SinemaaDbModel.FK_tblSatis_blgPersonel" FromRole="tblSati" ToRole="blgPersonel" />
+    <NavigationProperty Name="blgSalon" Relationship="SinemaaDbModel.FK_tblSatis_blgSalon" FromRole="tblSati" ToRole="blgSalon" />
+    <NavigationProperty Name="blgSean" Relationship="SinemaaDbModel.FK_tblSatis_blgSeans" FromRole="tblSati" ToRole="blgSean" />
+    <NavigationProperty Name="blgTur" Relationship="SinemaaDbModel.FK_tblSatis_blgTur" FromRole="tblSati" ToRole="blgTur" />
+    <NavigationProperty Name="blgYiyecek" Relationship="SinemaaDbModel.FK_tblSatis_blgYiyecek" FromRole="tblSati" ToRole="blgYiyecek" />
+  </EntityType>
+  <Association Name="FK_blgFilm_blgFilmTablo">
+    <End Type="SinemaaDbModel.blgFilmTablo" Role="blgFilmTablo" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.blgFilm" Role="blgFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgFilmTablo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="blgFilm">
+        <PropertyRef Name="FilmTabloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_blgFilm_blgSalon">
+    <End Type="SinemaaDbModel.blgSalon" Role="blgSalon" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.blgFilm" Role="blgFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgSalon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="blgFilm">
+        <PropertyRef Name="SalonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_blgFilm_blgSeans">
+    <End Type="SinemaaDbModel.blgSean" Role="blgSean" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.blgFilm" Role="blgFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgSean">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="blgFilm">
+        <PropertyRef Name="SeansId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_blgFilm_blgTur">
+    <End Type="SinemaaDbModel.blgTur" Role="blgTur" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.blgFilm" Role="blgFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgTur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="blgFilm">
+        <PropertyRef Name="TurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgFilmTablo">
+    <End Type="SinemaaDbModel.blgFilmTablo" Role="blgFilmTablo" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgFilmTablo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="FilmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgIcecek">
+    <End Type="SinemaaDbModel.blgIcecek" Role="blgIcecek" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgIcecek">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="IcecekId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgKoltuk">
+    <End Type="SinemaaDbModel.blgKoltuk" Role="blgKoltuk" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgKoltuk">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="KoltukId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgPersonel">
+    <End Type="SinemaaDbModel.blgPersonel" Role="blgPersonel" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgPersonel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="PersonelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_blgSeans_blgSalon">
+    <End Type="SinemaaDbModel.blgSalon" Role="blgSalon" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.blgSean" Role="blgSean" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgSalon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="blgSean">
+        <PropertyRef Name="SalonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgSalon">
+    <End Type="SinemaaDbModel.blgSalon" Role="blgSalon" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgSalon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="SalonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgSeans">
+    <End Type="SinemaaDbModel.blgSean" Role="blgSean" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgSean">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="SeansId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgTur">
+    <End Type="SinemaaDbModel.blgTur" Role="blgTur" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgTur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="TurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSatis_blgYiyecek">
+    <End Type="SinemaaDbModel.blgYiyecek" Role="blgYiyecek" Multiplicity="0..1" />
+    <End Type="SinemaaDbModel.tblSati" Role="tblSati" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgYiyecek">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblSati">
+        <PropertyRef Name="YiyecekId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

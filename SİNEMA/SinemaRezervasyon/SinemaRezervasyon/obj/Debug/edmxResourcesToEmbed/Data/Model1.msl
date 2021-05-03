@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SinemaaDbModelStoreContainer" CdmEntityContainer="SinemaaDbEntities">
+    <EntitySetMapping Name="blgFilms">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgFilm">
+        <MappingFragment StoreEntitySet="blgFilm">
+          <ScalarProperty Name="ResimUrl" ColumnName="ResimUrl" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="TurId" ColumnName="TurId" />
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="SalonId" ColumnName="SalonId" />
+          <ScalarProperty Name="FilmTabloId" ColumnName="FilmTabloId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgFilmTabloes">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgFilmTablo">
+        <MappingFragment StoreEntitySet="blgFilmTablo">
+          <ScalarProperty Name="FilmAdi" ColumnName="FilmAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgIceceks">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgIcecek">
+        <MappingFragment StoreEntitySet="blgIcecek">
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="IcecekAdi" ColumnName="IcecekAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgKoltuks">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgKoltuk">
+        <MappingFragment StoreEntitySet="blgKoltuk">
+          <ScalarProperty Name="KoltukNo" ColumnName="KoltukNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgPersonels">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgPersonel">
+        <MappingFragment StoreEntitySet="blgPersonel">
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="PersonelAdi" ColumnName="PersonelAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgSalons">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgSalon">
+        <MappingFragment StoreEntitySet="blgSalon">
+          <ScalarProperty Name="KoltukSayisi" ColumnName="KoltukSayisi" />
+          <ScalarProperty Name="SalonNo" ColumnName="SalonNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgSeans">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgSean">
+        <MappingFragment StoreEntitySet="blgSeans">
+          <ScalarProperty Name="SalonId" ColumnName="SalonId" />
+          <ScalarProperty Name="Seans" ColumnName="Seans" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgTurs">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgTur">
+        <MappingFragment StoreEntitySet="blgTur">
+          <ScalarProperty Name="TurAdi" ColumnName="TurAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgYiyeceks">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgYiyecek">
+        <MappingFragment StoreEntitySet="blgYiyecek">
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="YiyecekAdi" ColumnName="YiyecekAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgYoneticis">
+      <EntityTypeMapping TypeName="SinemaaDbModel.blgYonetici">
+        <MappingFragment StoreEntitySet="blgYonetici">
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCiroes">
+      <EntityTypeMapping TypeName="SinemaaDbModel.tblCiro">
+        <MappingFragment StoreEntitySet="tblCiro">
+          <ScalarProperty Name="Ciro" ColumnName="Ciro" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="ToplamBilet" ColumnName="ToplamBilet" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSatis">
+      <EntityTypeMapping TypeName="SinemaaDbModel.tblSati">
+        <MappingFragment StoreEntitySet="tblSatis">
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="KoltukId" ColumnName="KoltukId" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="BiletNo" ColumnName="BiletNo" />
+          <ScalarProperty Name="BiletAdet" ColumnName="BiletAdet" />
+          <ScalarProperty Name="IcecekId" ColumnName="IcecekId" />
+          <ScalarProperty Name="YiyecekId" ColumnName="YiyecekId" />
+          <ScalarProperty Name="SeansId" ColumnName="SeansId" />
+          <ScalarProperty Name="SalonId" ColumnName="SalonId" />
+          <ScalarProperty Name="FilmId" ColumnName="FilmId" />
+          <ScalarProperty Name="TurId" ColumnName="TurId" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

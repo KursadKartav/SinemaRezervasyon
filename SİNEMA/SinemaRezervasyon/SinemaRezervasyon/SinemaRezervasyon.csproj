@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6AE853BF-A0C6-4557-B98B-94E1C286BBEE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SinemaRezervasyon</RootNamespace>
+    <AssemblyName>SinemaRezervasyon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bilgi\frmAdminAnasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmAdminAnasayfa.Designer.cs">
+      <DependentUpon>frmAdminAnasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmBiletSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmBiletSatis.Designer.cs">
+      <DependentUpon>frmBiletSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmFilmGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmFilmGuncelleme.Designer.cs">
+      <DependentUpon>frmFilmGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmHesap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmHesap.Designer.cs">
+      <DependentUpon>frmHesap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmIcecekGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmIcecekGuncelleme.Designer.cs">
+      <DependentUpon>frmIcecekGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmPersonelGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmPersonelGiris.Designer.cs">
+      <DependentUpon>frmPersonelGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmPersonelGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmPersonelGuncelleme.Designer.cs">
+      <DependentUpon>frmPersonelGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmYiyecekGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmYiyecekGuncelleme.Designer.cs">
+      <DependentUpon>frmYiyecekGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgi\frmYoneticiGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgi\frmYoneticiGiris.Designer.cs">
+      <DependentUpon>frmYoneticiGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgFilm.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgFilmTablo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgIcecek.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgKoltuk.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgPersonel.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgSalon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgSean.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgTur.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgYiyecek.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\blgYonetici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblCiro.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblSati.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fonksiyonlar\Formlar.cs" />
+    <Compile Include="Fonksiyonlar\Numaralar.cs" />
+    <Compile Include="frmAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnaSayfa.Designer.cs">
+      <DependentUpon>frmAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bilgi\frmAdminAnasayfa.resx">
+      <DependentUpon>frmAdminAnasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmBiletSatis.resx">
+      <DependentUpon>frmBiletSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmFilmGuncelleme.resx">
+      <DependentUpon>frmFilmGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmHesap.resx">
+      <DependentUpon>frmHesap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmIcecekGuncelleme.resx">
+      <DependentUpon>frmIcecekGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmPersonelGiris.resx">
+      <DependentUpon>frmPersonelGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmPersonelGuncelleme.resx">
+      <DependentUpon>frmPersonelGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmYiyecekGuncelleme.resx">
+      <DependentUpon>frmYiyecekGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgi\frmYoneticiGiris.resx">
+      <DependentUpon>frmYoneticiGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnaSayfa.resx">
+      <DependentUpon>frmAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Data\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tr_tr_sinema-696x435.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yönetici.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\personel girişi.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\titanic.jpg" />
+    <None Include="Resources\külkedisi1.jpg" />
+    <None Include="Resources\külkedisi.jpg" />
+    <None Include="Resources\kork.jpg" />
+    <None Include="Resources\asdfghjk.jpg" />
+    <None Include="Resources\1413316357_9turist-omer.jpg" />
+    <None Include="Resources\paraparapara.jpg" />
+    <None Include="Resources\capshahahahaçokkomik.jpg" />
+    <None Include="Resources\jokerbilader.jpg" />
+    <None Include="Resources\yanyanaadeğilcancana.jpg" />
+    <None Include="Resources\Tickett.png" />
+    <None Include="Resources\loggg.png" />
+    <None Include="Resources\heykalkındostlar.jpg" />
+    <None Include="Resources\hobaaoturmayamıgeldik.jpg" />
+    <None Include="Resources\çıktı.jpg" />
+    <None Include="Resources\printicon.png" />
+    <None Include="Resources\BiletAl.png" />
+    <None Include="Resources\yannnnpanell.jpg" />
+    <None Include="Resources\beğendimsenidostum.jpg" />
+    <None Include="Resources\bull.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\Sil.png" />
+    <None Include="Resources\kaydet.png" />
+    <None Include="Resources\Sinema-Arkaplan.jpg" />
+    <None Include="Resources\arkaplan.jpg" />
+    <None Include="Resources\kapat.png" />
+    <None Include="Resources\moneyy.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\personel kaydet.png" />
+    <None Include="Resources\popcorn.png" />
+    <None Include="Resources\coconut-cocktail-3aa9af493dd84e5738e2eabe0090467f.png" />
+    <None Include="Resources\asdf.jpg" />
+    <None Include="Resources\İçecek.jpg" />
+    <None Include="Resources\741587b84a409ccaffeaebaf4d389444-video-camera-icon-by-vexels.png" />
+    <None Include="Resources\sadfdfg.png" />
+    <None Include="Resources\brattle-theatre-cinema-film-cine.jpg" />
+    <None Include="Resources\zsdfsad.png" />
+    <None Include="Resources\fdskjgf.png" />
+    <None Include="Resources\film güncelleme.png" />
+    <None Include="Resources\44561982-rideau-rouge-avec-spot-sur-le-théâtre-ou-le-stade-de-cinéma-.jpg" />
+    <None Include="Resources\panel arkaplan.jpg" />
+    <None Include="Resources\logiinn.jpg" />
+    <None Include="Resources\logiiiin.png" />
+    <None Include="Resources\logiin.jpg" />
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
